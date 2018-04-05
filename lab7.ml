@@ -342,7 +342,7 @@ class square_center_scale (p: point) (s: float) : shape =
     inherit square p s as super
     method! scale (k : float) : unit =
       super#scale k;
-      let move = s *. (k -. 1.) /. 2. in
+      let move = -1. *. s *. (k -. 1.) /. 2. in
       super#translate (move, move)
   end
 
@@ -415,7 +415,9 @@ class rect_quad (p : point) (w : float) (h : float) : quad =
   object
     inherit rect p w h as super
     method sides : float * float * float * float =
-      super#width, super#height, super#width, super#height
+      let c1, c2 = super#bounding_box in
+      let width, height = ((fst c2) -. (fst c1)), ((snd c2) -. (snd c1)) in
+      width, height, width, height
   end ;;
 
 (*......................................................................
