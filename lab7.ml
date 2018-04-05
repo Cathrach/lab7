@@ -58,9 +58,9 @@ the shape.
 ....................................................................*)
 let area_adt (s : shape_adt) : float =
   match s with
-  | Square (_, e) = e *. e
-  | Rect (_, w, h) = w *. h
-  | Circle (_, r) = 4. *. atan (1.) *. r *. r
+  | Square (_, e) -> e *. e
+  | Rect (_, w, h) -> w *. h
+  | Circle (_, r) -> 4. *. atan (1.) *. r *. r
 
 (*....................................................................
 Exercise 1B: Write a function that, given a list of elements of type
