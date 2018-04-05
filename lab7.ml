@@ -223,7 +223,7 @@ object
   val mutable radius = r
 
   method area : float =
-    4 *. atan (1.) * radius**2.
+    4. *. atan (1.) *. radius**2.
 
   method bounding_box : point * point =
     let x, y = center in
