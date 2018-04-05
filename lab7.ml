@@ -273,7 +273,7 @@ The list should contain, in order:
 let s_list = [
   new rect (1., 1.) 4. 5.;
   new circle (0., -4.) 10.;
-  new square (-3. -2.5) 4.3
+  new square (-3., -2.5) 4.3
 ] ;;
 
 (* As you might recall, lists can only contain objects of the same
